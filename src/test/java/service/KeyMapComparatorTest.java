@@ -1,19 +1,21 @@
 package service;
 
+import domain.KeyMapData;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import static org.testng.Assert.*;
 
 public class KeyMapComparatorTest
 {
     private KeyMapComparator keyMapComparator;
-    private Map<String, String> baselineTestData;
-    private Map<String, String> externalTestData;
-    private Map<String, String> matchesTestData;
+    private Map<String, KeyMapData> baselineTestData;
+    private Map<String, KeyMapData> externalTestData;
+    private Map<KeyMapData, KeyMapData> matchesTestData;
 
     @BeforeMethod
     public void initTest()
@@ -31,23 +33,28 @@ public class KeyMapComparatorTest
     @Test
     public void canReadBaselineDataFromMap()
     {
-
-        Map<String, String> baselineData = keyMapComparator.getBaselineData();
+        Map<String, KeyMapData> baselineData = keyMapComparator.getBaselineData();
         assertEquals(baselineData, baselineTestData);
     }
 
     @Test
     public void canReadExternalDataFromMap()
     {
-        Map<String, String> externalData = keyMapComparator.getExternalData();
-        assertEquals(externalData, baselineTestData);
+        Map<String, KeyMapData> externalData = keyMapComparator.getExternalData();
+        assertEquals(externalData, externalTestData);
     }
 
     @Test
     public void canFindMatches()
     {
-        Map<String, String> matches = keyMapComparator.findAllMatches();
-        assertEquals(matches, matchesTestData);
+        int EXPECTED_MATCHES_SIZE = 1;
+        Map<KeyMapData, KeyMapData> matches = keyMapComparator.findAllMatches();
+        Set<KeyMapData> keys = matches.keySet();
+        for (KeyMapData key : keys)
+        {
+            KeyMapComparator.keyMapsMatch(key, matches.get(key));
+        }
+        assertEquals(keys.size(), EXPECTED_MATCHES_SIZE);
     }
 
     @Test
@@ -70,21 +77,22 @@ public class KeyMapComparatorTest
 
     private void initTestData()
     {
-        baselineTestData = new HashMap<String, String>();
-        baselineTestData.put("1", "a");
-        baselineTestData.put("2", "b");
-        baselineTestData.put("3", "c");
+        baselineTestData = new HashMap<String, KeyMapData>();
+        baselineTestData.put("1", new KeyMapData().setKey("1").setValue("a").setRowNumber(1L));
+        baselineTestData.put("2", new KeyMapData().setKey("2").setValue("b").setRowNumber(2L));
+        baselineTestData.put("3", new KeyMapData().setKey("3").setValue("c").setRowNumber(3L));
 
         keyMapComparator.setBaselineData(baselineTestData);
 
-        externalTestData = new HashMap<String, String>();
-        externalTestData.put("1", "a");
-        externalTestData.put("2", "B");
-        externalTestData.put("4", "e");
+        externalTestData = new HashMap<String, KeyMapData>();
+        externalTestData.put("1", new KeyMapData().setKey("1").setValue("a").setRowNumber(1L));
+        externalTestData.put("2", new KeyMapData().setKey("2").setValue("B").setRowNumber(2L));
+        externalTestData.put("4", new KeyMapData().setKey("4").setValue("e").setRowNumber(3L));
 
         keyMapComparator.setExternalData(externalTestData);
 
-        matchesTestData = new HashMap<String, String>();
-        matchesTestData.put("1", "1");
+        matchesTestData = new HashMap<KeyMapData, KeyMapData>();
+        matchesTestData.put(new KeyMapData().setKey("1").setValue("a").setRowNumber(1L),
+                            new KeyMapData().setKey("1").setValue("a").setRowNumber(1L));
     }
 }
