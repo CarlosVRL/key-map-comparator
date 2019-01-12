@@ -1,6 +1,8 @@
 package service;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class KeyMapComparator
 {
@@ -25,5 +27,25 @@ public class KeyMapComparator
     public Map<String, String> getExternalData()
     {
         return this.externalData;
+    }
+
+    public Map<String, String> findAllMatches()
+    {
+        Map<String, String> matches = new HashMap<String, String>();
+        Set<String> keys = baselineData.keySet();
+        for (String key : keys)
+        {
+            if (!externalData.containsKey(key)) { continue; }
+            String baselineValue = baselineData.get(key);
+            String externalValue = externalData.get(key);
+
+            if (baselineValue == null || externalValue == null) { continue; }
+
+            if (baselineValue.equals(externalValue))
+            {
+                matches.put(key, key);
+            }
+        }
+        return matches;
     }
 }
