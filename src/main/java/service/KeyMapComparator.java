@@ -57,4 +57,19 @@ public class KeyMapComparator
         if (!a.getValue().equals(b.getValue())) { return false; }
         return true;
     }
+
+    public String getReport(Map<KeyMapData, KeyMapData> matches)
+    {
+        String report = "";
+        String seperator = ", ";
+        Set<KeyMapData> keys = matches.keySet();
+        report += "Baseline Key, Baseline Row, Baseline Value, External Key, External Row, External Value\n";
+        for (KeyMapData baseline : keys)
+        {
+            KeyMapData external = matches.get(baseline);
+            report += baseline.getKey() + seperator + baseline.getRowNumber() + seperator + baseline.getValue() + seperator +
+                      external.getKey() + seperator + external.getRowNumber() + seperator + external.getValue() + "\n";
+        }
+        return report;
+    }
 }

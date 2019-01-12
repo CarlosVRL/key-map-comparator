@@ -26,72 +26,74 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="1" />
-          <entry key="java" value="2" />
-          <entry key="xml" value="1" />
+          <entry key="class" value="3" />
+          <entry key="java" value="6" />
+          <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="2" />
-          <entry key="XML" value="1" />
+          <entry key="CLASS" value="3" />
+          <entry key="JAVA" value="6" />
+          <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1625" />
-          <entry key="txt" value="83" />
+          <entry key="java" value="3217" />
+          <entry key="txt" value="191" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1625" />
-          <entry key="PLAIN_TEXT" value="83" />
+          <entry key="JAVA" value="3217" />
+          <entry key="PLAIN_TEXT" value="191" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/KeyMapComparator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="47" column="38" lean-forward="true" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#141#142#0" expanded="true" />
-                <element signature="e#188#189#0" expanded="true" />
-                <element signature="e#282#283#0" expanded="true" />
-                <element signature="e#309#310#0" expanded="true" />
-                <element signature="e#442#443#0" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
-                <element signature="e#550#551#0" expanded="true" />
-                <element signature="e#576#577#0" expanded="true" />
-                <element signature="e#730#746#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/service/KeyMapComparatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1437">
-              <caret line="84" column="59" lean-forward="true" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+            <state relative-caret-position="-168">
+              <caret line="63" column="50" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#291#292#0" expanded="true" />
-                <element signature="e#338#339#0" expanded="true" />
+                <element signature="e#603#604#0" expanded="true" />
+                <element signature="e#650#651#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/KeyMapComparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="777">
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#284#285#0" expanded="true" />
+                <element signature="e#332#333#0" expanded="true" />
+                <element signature="e#818#842#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/domain/KeyMapData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+              <folding>
+                <element signature="e#187#188#0" expanded="true" />
+                <element signature="e#213#214#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -99,8 +101,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="TestNG Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -121,6 +123,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/java/domain/KeyMapData.java" />
         <option value="$PROJECT_DIR$/src/test/java/service/KeyMapComparatorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/KeyMapComparator.java" />
       </list>
@@ -152,53 +155,6 @@
               <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
               <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -206,7 +162,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547279229263" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547281369589" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.TestNG" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../spring-guides" />
@@ -233,7 +189,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.KeyMapComparatorTest.canFindMatches">
+  <component name="RunManager" selected="TestNG.KeyMapComparatorTest.canPrintFormattedReport">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -288,7 +244,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KeyMapComparatorTest.canReadFromMap" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="KeyMapComparatorTest.canInstantiateObject" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="keymapcomparator" />
       <extension name="coverage">
         <pattern>
@@ -298,7 +254,45 @@
       </extension>
       <option name="PACKAGE_NAME" value="service" />
       <option name="MAIN_CLASS_NAME" value="service.KeyMapComparatorTest" />
-      <option name="METHOD_NAME" value="canReadFromMap" />
+      <option name="METHOD_NAME" value="canInstantiateObject" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KeyMapComparatorTest.canPrintFormattedReport" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="keymapcomparator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.KeyMapComparatorTest" />
+      <option name="METHOD_NAME" value="canPrintFormattedReport" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KeyMapComparatorTest.canReadExternalDataFromMap" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="keymapcomparator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.KeyMapComparatorTest" />
+      <option name="METHOD_NAME" value="canReadExternalDataFromMap" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
@@ -326,14 +320,18 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.KeyMapComparatorTest" />
-      <item itemvalue="TestNG.KeyMapComparatorTest.canReadFromMap" />
       <item itemvalue="TestNG.KeyMapComparatorTest.canFindMatches" />
+      <item itemvalue="TestNG.KeyMapComparatorTest.canInstantiateObject" />
+      <item itemvalue="TestNG.KeyMapComparatorTest.canReadExternalDataFromMap" />
+      <item itemvalue="TestNG.KeyMapComparatorTest.canPrintFormattedReport" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.KeyMapComparatorTest.canFindMatches" />
+        <item itemvalue="TestNG.KeyMapComparatorTest.canPrintFormattedReport" />
         <item itemvalue="TestNG.KeyMapComparatorTest" />
-        <item itemvalue="TestNG.KeyMapComparatorTest.canReadFromMap" />
+        <item itemvalue="TestNG.KeyMapComparatorTest.canFindMatches" />
+        <item itemvalue="TestNG.KeyMapComparatorTest.canReadExternalDataFromMap" />
+        <item itemvalue="TestNG.KeyMapComparatorTest.canInstantiateObject" />
       </list>
     </recent_temporary>
   </component>
@@ -355,43 +353,57 @@
       <option name="project" value="LOCAL" />
       <updated>1547278428130</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add matches implementation">
+      <created>1547279411766</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1547279411766</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Re-factor matches logic with row number extension">
+      <created>1547281003760</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547281003760</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="KeyMapComparatorTest_canReadFromMap - 2019.01.12 at 01h 28m 12s.xml">
-      <configuration name="KeyMapComparatorTest.canReadFromMap" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="KeyMapComparatorTest - 2019.01.12 at 01h 29m 22s.xml">
+    <history-entry file="KeyMapComparatorTest - 2019.01.12 at 01h 59m 41s.xml">
       <configuration name="KeyMapComparatorTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="KeyMapComparatorTest - 2019.01.12 at 01h 31m 48s.xml">
+    <history-entry file="KeyMapComparatorTest_canReadExternalDataFromMap - 2019.01.12 at 02h 00m 18s.xml">
+      <configuration name="KeyMapComparatorTest.canReadExternalDataFromMap" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="KeyMapComparatorTest - 2019.01.12 at 02h 00m 25s.xml">
       <configuration name="KeyMapComparatorTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="KeyMapComparatorTest - 2019.01.12 at 01h 35m 58s.xml">
+    <history-entry file="KeyMapComparatorTest - 2019.01.12 at 02h 02m 39s.xml">
       <configuration name="KeyMapComparatorTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="KeyMapComparatorTest_canFindMatches - 2019.01.12 at 01h 39m 23s.xml">
+    <history-entry file="KeyMapComparatorTest - 2019.01.12 at 02h 03m 18s.xml">
+      <configuration name="KeyMapComparatorTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="KeyMapComparatorTest - 2019.01.12 at 02h 09m 55s.xml">
+      <configuration name="KeyMapComparatorTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="KeyMapComparatorTest - 2019.01.12 at 02h 09m 58s.xml">
+      <configuration name="KeyMapComparatorTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="KeyMapComparatorTest - 2019.01.12 at 02h 12m 22s.xml">
+      <configuration name="KeyMapComparatorTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="KeyMapComparatorTest_canFindMatches - 2019.01.12 at 02h 16m 06s.xml">
       <configuration name="KeyMapComparatorTest.canFindMatches" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="KeyMapComparatorTest_canFindMatches - 2019.01.12 at 01h 39m 51s.xml">
-      <configuration name="KeyMapComparatorTest.canFindMatches" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="KeyMapComparatorTest_canFindMatches - 2019.01.12 at 01h 42m 17s.xml">
-      <configuration name="KeyMapComparatorTest.canFindMatches" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="KeyMapComparatorTest_canFindMatches - 2019.01.12 at 01h 43m 16s.xml">
-      <configuration name="KeyMapComparatorTest.canFindMatches" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="KeyMapComparatorTest_canFindMatches - 2019.01.12 at 01h 45m 11s.xml">
-      <configuration name="KeyMapComparatorTest.canFindMatches" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="KeyMapComparatorTest_canFindMatches - 2019.01.12 at 01h 45m 28s.xml">
-      <configuration name="KeyMapComparatorTest.canFindMatches" configurationId="TestNG" />
+    <history-entry file="KeyMapComparatorTest - 2019.01.12 at 02h 16m 49s.xml">
+      <configuration name="KeyMapComparatorTest" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
@@ -402,19 +414,19 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Capture Tool" />
       <window_info id="Job Explorer" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24943566" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11868958" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="DB Execution Console" />
       <window_info anchor="bottom" id="Terminal" weight="0.32954547" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" weight="0.32954547" />
+      <window_info anchor="bottom" id="Messages" weight="0.32924107" />
       <window_info anchor="bottom" id="Console" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32954547" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3236607" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39955357" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -433,16 +445,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implement get/set operators for Map data structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement get/set operators for Map data structure" />
+    <MESSAGE value="Add matches implementation" />
+    <MESSAGE value="Re-factor matches logic with row number extension" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-factor matches logic with row number extension" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/service/KeyMapComparator.java</url>
-          <line>35</line>
+          <line>50</line>
           <properties />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -458,33 +472,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/KeyMapData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <element signature="e#187#188#0" expanded="true" />
+            <element signature="e#213#214#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.8.8/testng-6.8.8.jar!/org/testng/internal/Invoker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-398">
+          <caret line="478" selection-start-line="478" selection-end-line="478" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/service/KeyMapComparatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1437">
-          <caret line="84" column="59" lean-forward="true" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+        <state relative-caret-position="-168">
+          <caret line="63" column="50" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#291#292#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/KeyMapComparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="47" column="38" lean-forward="true" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+        <state relative-caret-position="777">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#141#142#0" expanded="true" />
-            <element signature="e#188#189#0" expanded="true" />
-            <element signature="e#282#283#0" expanded="true" />
-            <element signature="e#309#310#0" expanded="true" />
-            <element signature="e#442#443#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#550#551#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-            <element signature="e#730#746#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#818#842#0" expanded="true" />
           </folding>
         </state>
       </provider>

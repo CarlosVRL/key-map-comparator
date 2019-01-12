@@ -58,6 +58,14 @@ public class KeyMapComparatorTest
     }
 
     @Test
+    public void canPrintFormattedReport()
+    {
+        Map<KeyMapData, KeyMapData> matches = keyMapComparator.findAllMatches();
+        String report = keyMapComparator.getReport(matches);
+        System.out.println(report);
+    }
+
+    @Test
     public void canFindDifferences()
     {
 
