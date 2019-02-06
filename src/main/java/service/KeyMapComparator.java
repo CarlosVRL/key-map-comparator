@@ -61,14 +61,14 @@ public class KeyMapComparator
     public String getReport(Map<KeyMapData, KeyMapData> matches)
     {
         String report = "";
-        String seperator = ", ";
+        String separator = ", ";
         Set<KeyMapData> keys = matches.keySet();
         report += "Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value\n";
         for (KeyMapData baseline : keys)
         {
             KeyMapData external = matches.get(baseline);
-            report += baseline.getRowNumber() + seperator + baseline.getKey() + seperator + baseline.getValue() + seperator +
-                      external.getRowNumber() + seperator + external.getKey() + seperator + external.getValue() + "\n";
+            report += baseline.getRowNumber() + separator + baseline.getKey() + separator + baseline.getValue() + separator +
+                      external.getRowNumber() + separator + external.getKey() + separator + external.getValue() + "\n";
         }
         return report;
     }
