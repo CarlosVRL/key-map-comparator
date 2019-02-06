@@ -1,0 +1,34 @@
+= Key Map Comparator
+
+== Synopsis
+
+KMC summarizes the differences between two key maps.
+Row numbers are included to help with cross-references.
+
+Given a set of baseline data:
+
+  Baseline Row, Baseline Key, Baseline Value
+  1           , ID_A        , VAL_A
+  2           , ID_B        , VAL_B
+  3           , ID_C        , VAL_C
+
+and the following external (comparison) data:
+
+  Baseline Row, Baseline Key, Baseline Value
+  3           , ID_D        , VAL_E
+  2           , ID_B        , VAL_C
+  1           , ID_A        , VAL_A
+
+Baseline key-value data matches external key-value data can be logged:
+
+  Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value
+  1           , ID_A        , VAL_A         , 1           , ID_A        , VAL_A
+
+As can mis-matches (including scenarios where the source isn't present):
+
+  Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value
+  2           , ID_B        , VAL_B         , 2           , ID_B        , VAL_C
+  3           , ID_C        , VAL_C         , 0           , -           , -
+  0           , -           , -             , 3           , ID_D        , VAL_E
+
+The Baseline and External data are assumed to have unique Keys.
