@@ -8,25 +8,25 @@ import java.util.Set;
 
 public class KeyMapComparator
 {
-    private Map<String, KeyMapData> baselineData;
-    private Map<String, KeyMapData> externalData;
+    private Map<Long, KeyMapData> baselineData;
+    private Map<Long, KeyMapData> externalData;
 
-    public void setBaselineData(Map<String, KeyMapData> baselineData)
+    public void setBaselineData(Map<Long, KeyMapData> baselineData)
     {
         this.baselineData = baselineData;
     }
 
-    public Map<String, KeyMapData> getBaselineData()
+    public Map<Long, KeyMapData> getBaselineData()
     {
         return this.baselineData;
     }
 
-    public void setExternalData(Map<String, KeyMapData> externalData)
+    public void setExternalData(Map<Long, KeyMapData> externalData)
     {
         this.externalData = externalData;
     }
 
-    public Map<String, KeyMapData> getExternalData()
+    public Map<Long, KeyMapData> getExternalData()
     {
         return this.externalData;
     }
@@ -34,8 +34,8 @@ public class KeyMapComparator
     public Map<KeyMapData, KeyMapData> findAllMatches()
     {
         Map<KeyMapData, KeyMapData> matches = new HashMap<KeyMapData, KeyMapData>();
-        Set<String> keys = baselineData.keySet();
-        for (String key : keys)
+        Set<Long> keys = baselineData.keySet();
+        for (Long key : keys)
         {
             if (!externalData.containsKey(key)) { continue; }
             KeyMapData baselineValue = baselineData.get(key);

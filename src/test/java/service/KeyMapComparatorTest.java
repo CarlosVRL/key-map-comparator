@@ -13,8 +13,8 @@ import static org.testng.Assert.*;
 public class KeyMapComparatorTest
 {
     private KeyMapComparator keyMapComparator;
-    private Map<String, KeyMapData> baselineTestData;
-    private Map<String, KeyMapData> externalTestData;
+    private Map<Long, KeyMapData> baselineTestData;
+    private Map<Long, KeyMapData> externalTestData;
     private Map<KeyMapData, KeyMapData> matchesTestData;
 
     private static final String DEFAULT_ID_A = "ID_A";
@@ -44,14 +44,14 @@ public class KeyMapComparatorTest
     @Test
     public void canReadBaselineDataFromMap()
     {
-        Map<String, KeyMapData> baselineData = keyMapComparator.getBaselineData();
+        Map<Long, KeyMapData> baselineData = keyMapComparator.getBaselineData();
         assertEquals(baselineData, baselineTestData);
     }
 
     @Test
     public void canReadExternalDataFromMap()
     {
-        Map<String, KeyMapData> externalData = keyMapComparator.getExternalData();
+        Map<Long, KeyMapData> externalData = keyMapComparator.getExternalData();
         assertEquals(externalData, externalTestData);
     }
 
@@ -96,22 +96,22 @@ public class KeyMapComparatorTest
 
     private void initTestData()
     {
-        baselineTestData = new HashMap<String, KeyMapData>();
-        baselineTestData.put("1", new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
-        baselineTestData.put("2", new KeyMapData().setKey(DEFAULT_ID_B).setValue(DEFAULT_VAL_B).setRowNumber(2L));
-        baselineTestData.put("3", new KeyMapData().setKey(DEFAULT_ID_C).setValue(DEFAULT_VAL_C).setRowNumber(3L));
+        baselineTestData = new HashMap<Long, KeyMapData>();
+        baselineTestData.put(1L, new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
+        baselineTestData.put(2L, new KeyMapData().setKey(DEFAULT_ID_B).setValue(DEFAULT_VAL_B).setRowNumber(2L));
+        baselineTestData.put(3L, new KeyMapData().setKey(DEFAULT_ID_C).setValue(DEFAULT_VAL_C).setRowNumber(3L));
 
         keyMapComparator.setBaselineData(baselineTestData);
 
-        externalTestData = new HashMap<String, KeyMapData>();
-        externalTestData.put("1", new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
-        externalTestData.put("2", new KeyMapData().setKey(DEFAULT_ID_B).setValue(DEFAULT_VAL_C).setRowNumber(2L));
-        externalTestData.put("4", new KeyMapData().setKey(DEFAULT_ID_D).setValue(DEFAULT_VAL_E).setRowNumber(3L));
+        externalTestData = new HashMap<Long, KeyMapData>();
+        externalTestData.put(1L, new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
+        externalTestData.put(2L, new KeyMapData().setKey(DEFAULT_ID_B).setValue(DEFAULT_VAL_C).setRowNumber(2L));
+        externalTestData.put(3L, new KeyMapData().setKey(DEFAULT_ID_D).setValue(DEFAULT_VAL_E).setRowNumber(3L));
 
         keyMapComparator.setExternalData(externalTestData);
 
         matchesTestData = new HashMap<KeyMapData, KeyMapData>();
-        matchesTestData.put(new KeyMapData().setKey("1").setValue("a").setRowNumber(1L),
-                            new KeyMapData().setKey("1").setValue("a").setRowNumber(1L));
+        matchesTestData.put(new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L),
+                            new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
     }
 }
