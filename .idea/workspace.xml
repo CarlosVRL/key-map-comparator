@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b58b843-f952-45ad-a9e2-8b7f796d9b04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/index.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/KeyMapComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/KeyMapComparator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/service/KeyMapComparatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/KeyMapComparatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/KeyMapComparator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/KeyMapComparator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/service/KeyMapComparatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/service/KeyMapComparatorTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -34,6 +28,7 @@
         <counts>
           <entry key="adoc" value="2" />
           <entry key="class" value="3" />
+          <entry key="gitignore" value="1" />
           <entry key="java" value="10" />
           <entry key="xml" value="3" />
         </counts>
@@ -43,22 +38,23 @@
           <entry key="AsciiDoc" value="1" />
           <entry key="CLASS" value="3" />
           <entry key="JAVA" value="10" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="adoc" value="934" />
+          <entry key="gitignore" value="12" />
           <entry key="java" value="4825" />
-          <entry key="txt" value="357" />
+          <entry key="txt" value="377" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="AsciiDoc" value="934" />
           <entry key="JAVA" value="4825" />
-          <entry key="PLAIN_TEXT" value="357" />
+          <entry key="PLAIN_TEXT" value="389" />
         </counts>
       </usages-collector>
     </session>
@@ -78,9 +74,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/service/KeyMapComparatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="1764">
               <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -149,6 +154,7 @@
         <option value="$PROJECT_DIR$/src/main/java/service/KeyMapComparator.java" />
         <option value="$PROJECT_DIR$/index.adoc" />
         <option value="$PROJECT_DIR$/src/test/java/service/KeyMapComparatorTest.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -177,32 +183,6 @@
               <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
               <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keymapcomparator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keymapcomparator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -211,7 +191,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549416974141" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549417381906" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.TestNG" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../spring-guides" />
@@ -451,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549413859497</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Update documentation">
+      <created>1549417015547</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1549417015547</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -536,7 +523,8 @@
     <MESSAGE value="Refactor String to Row (Long)" />
     <MESSAGE value="Re-arrange columns to put ID in front" />
     <MESSAGE value="Update spelling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update spelling" />
+    <MESSAGE value="Update documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update documentation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -584,21 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.adoc">
-      <provider editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="4" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;AsciiDocPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="546">
-            <caret line="26" column="72" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/KeyMapComparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -621,13 +594,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/service/KeyMapComparatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="1764">
           <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#667#668#0" expanded="true" />
             <element signature="e#714#715#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.adoc">
+      <provider editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="4" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;AsciiDocPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="546">
+            <caret line="26" column="72" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="72" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
         </state>
       </provider>
     </entry>
