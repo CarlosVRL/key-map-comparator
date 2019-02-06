@@ -12,23 +12,27 @@ Given a set of baseline data:
   2           , ID_B        , VAL_B
   3           , ID_C        , VAL_C
 
-and the following external (comparison) data:
+and a set external (comparison) data:
 
   Baseline Row, Baseline Key, Baseline Value
-  3           , ID_D        , VAL_E
-  2           , ID_B        , VAL_C
   1           , ID_A        , VAL_A
+  2           , ID_B        , VAL_C
+  3           , ID_D        , VAL_E
 
-Baseline key-value data matches external key-value data can be logged:
+Baseline key-value data matching external key-value data can be logged by rows:
 
   Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value
   1           , ID_A        , VAL_A         , 1           , ID_A        , VAL_A
 
-As can mis-matches (including scenarios where the source isn't present):
+As can all of the key-value data mis-matches:
 
   Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value
   2           , ID_B        , VAL_B         , 2           , ID_B        , VAL_C
   3           , ID_C        , VAL_C         , 0           , -           , -
   0           , -           , -             , 3           , ID_D        , VAL_E
 
+=== Notes
+
 The Baseline and External data are assumed to have unique Keys.
+
+Data mis-matches include scenarios where baseline/external source isn't present.
