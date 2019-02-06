@@ -63,12 +63,12 @@ public class KeyMapComparator
         String report = "";
         String seperator = ", ";
         Set<KeyMapData> keys = matches.keySet();
-        report += "Baseline Key, Baseline Row, Baseline Value, External Key, External Row, External Value\n";
+        report += "Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value\n";
         for (KeyMapData baseline : keys)
         {
             KeyMapData external = matches.get(baseline);
-            report += baseline.getKey() + seperator + baseline.getRowNumber() + seperator + baseline.getValue() + seperator +
-                      external.getKey() + seperator + external.getRowNumber() + seperator + external.getValue() + "\n";
+            report += baseline.getRowNumber() + seperator + baseline.getKey() + seperator + baseline.getValue() + seperator +
+                      external.getRowNumber() + seperator + external.getKey() + seperator + external.getValue() + "\n";
         }
         return report;
     }
