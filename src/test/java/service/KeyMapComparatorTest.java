@@ -17,6 +17,17 @@ public class KeyMapComparatorTest
     private Map<String, KeyMapData> externalTestData;
     private Map<KeyMapData, KeyMapData> matchesTestData;
 
+    private static final String DEFAULT_ID_A = "ID_A";
+    private static final String DEFAULT_ID_B = "ID_B";
+    private static final String DEFAULT_ID_C = "ID_C";
+    private static final String DEFAULT_ID_D = "ID_D";
+
+    private static final String DEFAULT_VAL_A = "VAL_A";
+    private static final String DEFAULT_VAL_B = "VAL_B";
+    private static final String DEFAULT_VAL_C = "VAL_C";
+    private static final String DEFAULT_VAL_D = "VAL_D";
+    private static final String DEFAULT_VAL_E = "VAL_E";
+
     @BeforeMethod
     public void initTest()
     {
@@ -86,16 +97,16 @@ public class KeyMapComparatorTest
     private void initTestData()
     {
         baselineTestData = new HashMap<String, KeyMapData>();
-        baselineTestData.put("1", new KeyMapData().setKey("1").setValue("a").setRowNumber(1L));
-        baselineTestData.put("2", new KeyMapData().setKey("2").setValue("b").setRowNumber(2L));
-        baselineTestData.put("3", new KeyMapData().setKey("3").setValue("c").setRowNumber(3L));
+        baselineTestData.put("1", new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
+        baselineTestData.put("2", new KeyMapData().setKey(DEFAULT_ID_B).setValue(DEFAULT_VAL_B).setRowNumber(2L));
+        baselineTestData.put("3", new KeyMapData().setKey(DEFAULT_ID_C).setValue(DEFAULT_VAL_C).setRowNumber(3L));
 
         keyMapComparator.setBaselineData(baselineTestData);
 
         externalTestData = new HashMap<String, KeyMapData>();
-        externalTestData.put("1", new KeyMapData().setKey("1").setValue("a").setRowNumber(1L));
-        externalTestData.put("2", new KeyMapData().setKey("2").setValue("B").setRowNumber(2L));
-        externalTestData.put("4", new KeyMapData().setKey("4").setValue("e").setRowNumber(3L));
+        externalTestData.put("1", new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
+        externalTestData.put("2", new KeyMapData().setKey(DEFAULT_ID_B).setValue(DEFAULT_VAL_C).setRowNumber(2L));
+        externalTestData.put("4", new KeyMapData().setKey(DEFAULT_ID_D).setValue(DEFAULT_VAL_E).setRowNumber(3L));
 
         keyMapComparator.setExternalData(externalTestData);
 
