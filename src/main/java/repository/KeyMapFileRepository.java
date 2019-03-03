@@ -3,15 +3,25 @@ package repository;
 import domain.KeyMapData;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * A KeyMapFileRepository.
+ */
 public class KeyMapFileRepository
 {
-
+    /**
+     * Read key map data from CSV.
+     *
+     * @param file the file to read
+     * @param keyHeader the key header
+     * @param valueHeader the value header
+     *
+     * @return the keyMapData
+     */
     public Map<String, KeyMapData> getKeyMapData(File file, String keyHeader, String valueHeader)
     {
         Map<String, KeyMapData> keyMapDataMap = new HashMap<String, KeyMapData>();;
