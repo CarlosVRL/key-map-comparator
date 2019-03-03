@@ -14,17 +14,25 @@ Given a set of baseline data:
 
 and a set external (comparison) data:
 
-  Baseline Row, Baseline Key, Baseline Value
+  External Row, External Key, External Value
   1           , ID_A        , VAL_A
   2           , ID_B        , VAL_C
   3           , ID_D        , VAL_E
 
 Baseline key-value data matching external key-value data can be logged by rows:
 
+```
+keyMapComparator.findAllMatches();
+```
+
   Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value
   1           , ID_A        , VAL_A         , 1           , ID_A        , VAL_A
 
 As can all of the key-value data mis-matches:
+
+```
+keyMapComparator.findAllDifferences();
+```
 
   Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value
   2           , ID_B        , VAL_B         , 2           , ID_B        , VAL_C
