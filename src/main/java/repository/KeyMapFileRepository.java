@@ -45,7 +45,7 @@ public class KeyMapFileRepository
                 keyMapData.setKey(key);
                 keyMapData.setValue(value);
 
-                keyMapDataMap.put(String.valueOf(recordCount), keyMapData);
+                keyMapDataMap.put(key, keyMapData);
             }
 
         } catch (FileNotFoundException e) {
