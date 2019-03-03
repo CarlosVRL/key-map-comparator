@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b58b843-f952-45ad-a9e2-8b7f796d9b04" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/repository/KeyMapFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/repository/KeyMapFileRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/key-map-baseline.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/KeyMapFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/KeyMapFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/repository/KeyMapFileRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/repository/KeyMapFileRepositoryTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,8 +53,8 @@
           <entry key="adoc" value="1184" />
           <entry key="csv" value="39" />
           <entry key="gitignore" value="12" />
-          <entry key="java" value="5909" />
-          <entry key="txt" value="440" />
+          <entry key="java" value="5953" />
+          <entry key="txt" value="482" />
           <entry key="xml" value="50" />
         </counts>
       </usages-collector>
@@ -64,8 +62,8 @@
         <counts>
           <entry key="AsciiDoc" value="1184" />
           <entry key="CSV" value="39" />
-          <entry key="JAVA" value="5909" />
-          <entry key="PLAIN_TEXT" value="452" />
+          <entry key="JAVA" value="5953" />
+          <entry key="PLAIN_TEXT" value="494" />
           <entry key="XML" value="50" />
         </counts>
       </usages-collector>
@@ -144,11 +142,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/repository/KeyMapFileRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+            <state relative-caret-position="-37">
+              <caret line="30" column="55" lean-forward="true" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#430#450#0" expanded="true" />
@@ -157,11 +155,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/repository/KeyMapFileRepositoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+            <state relative-caret-position="330">
+              <caret line="21" column="115" lean-forward="true" selection-start-line="21" selection-start-column="115" selection-end-line="21" selection-end-column="115" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,7 +174,7 @@
           </provider>
           <provider selected="true" editor-type-id="csv-text-editor">
             <state>
-              <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
+              <caret selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -222,8 +220,8 @@
         <option value="$PROJECT_DIR$/readme.adoc" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/resources/key-map-baseline.csv" />
-        <option value="$PROJECT_DIR$/src/test/java/repository/KeyMapFileRepositoryTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/repository/KeyMapFileRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/repository/KeyMapFileRepositoryTest.java" />
       </list>
     </option>
   </component>
@@ -234,7 +232,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
@@ -338,7 +336,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551592619204" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551592691985" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.TestNG" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../spring-guides" />
@@ -613,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1551590464032</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add default CSV reader (unique names)">
+      <created>1551592639510</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1551592639510</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -649,10 +654,10 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="-519" y="0" width="518" height="1076" id="Project" order="0" type="FLOATING" visible="true" weight="0.2056928" />
+      <window_info active="true" content_ui="combo" x="-519" y="0" width="518" height="1076" id="Project" order="0" type="FLOATING" visible="true" weight="0.2056928" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -664,7 +669,7 @@
       <window_info id="Job Explorer" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44204545" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.4341518" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39955357" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -701,7 +706,8 @@
     <MESSAGE value="Update readme file" />
     <MESSAGE value="Update documentation" />
     <MESSAGE value="Add example usage method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add example usage method" />
+    <MESSAGE value="Add default CSV reader (unique names)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add default CSV reader (unique names)" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.8.8/testng-6.8.8.jar!/org/testng/SuiteRunnerWorker.class">
@@ -750,16 +756,6 @@
             <element signature="e#479#480#0" expanded="true" />
             <element signature="e#616#617#0" expanded="true" />
             <element signature="e#648#649#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/service/KeyMapComparatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -813,33 +809,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/repository/KeyMapFileRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-37">
+          <caret line="30" column="55" lean-forward="true" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#430#450#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/key-map-baseline.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" rowLines="3" />
       </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state>
-          <caret column="27" lean-forward="true" selection-start-column="27" selection-end-column="27" />
+          <caret selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/repository/KeyMapFileRepositoryTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/service/KeyMapComparatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+        <state relative-caret-position="189">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/repository/KeyMapFileRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/repository/KeyMapFileRepositoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+        <state relative-caret-position="330">
+          <caret line="21" column="115" lean-forward="true" selection-start-line="21" selection-start-column="115" selection-end-line="21" selection-end-column="115" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#430#450#0" expanded="true" />
           </folding>
         </state>
       </provider>

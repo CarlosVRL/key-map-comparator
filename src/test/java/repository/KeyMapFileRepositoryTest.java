@@ -19,7 +19,7 @@ public class KeyMapFileRepositoryTest
         URL url = this.getClass().getResource("/key-map-baseline.csv");
         File file = new File(url.getFile());
 
-        Map<String, KeyMapData> data  = keyMapFileRepository.getKeyMapData(file);
+        Map<String, KeyMapData> data  = keyMapFileRepository.getKeyMapData(file, "Baseline Key", "Baseline Value");
         Assert.assertNotNull(data);
         Assert.assertEquals(data.size(), 3);
     }
