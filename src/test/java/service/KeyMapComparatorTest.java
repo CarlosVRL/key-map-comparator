@@ -30,7 +30,7 @@ public class KeyMapComparatorTest
     @BeforeMethod
     public void init() {
         keyMapComparator = new KeyMapComparator();
-        initTestData();
+        simpleTestData();
     }
 
     @Test
@@ -55,8 +55,7 @@ public class KeyMapComparatorTest
         int EXPECTED_MATCHES_SIZE = 1;
         Map<KeyMapData, KeyMapData> matches = keyMapComparator.findAllMatches();
         Set<KeyMapData> keys = matches.keySet();
-        for (KeyMapData key : keys)
-        {
+        for (KeyMapData key : keys) {
             KeyMapComparator.keyMapsMatch(key, matches.get(key));
         }
         assertEquals(keys.size(), EXPECTED_MATCHES_SIZE);
@@ -84,22 +83,22 @@ public class KeyMapComparatorTest
         System.out.println(differencesReport);
     }
 
-    private void initTestData() {
-        baselineTestData = new HashMap<String, KeyMapData>();
+    private void simpleTestData() {
+        baselineTestData = new HashMap<>();
         baselineTestData.put(DEFAULT_ID_A, new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
         baselineTestData.put(DEFAULT_ID_B, new KeyMapData().setKey(DEFAULT_ID_B).setValue(DEFAULT_VAL_B).setRowNumber(2L));
         baselineTestData.put(DEFAULT_ID_C, new KeyMapData().setKey(DEFAULT_ID_C).setValue(DEFAULT_VAL_C).setRowNumber(3L));
 
         keyMapComparator.setBaselineData(baselineTestData);
 
-        externalTestData = new HashMap<String, KeyMapData>();
+        externalTestData = new HashMap<>();
         externalTestData.put(DEFAULT_ID_A, new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
         externalTestData.put(DEFAULT_ID_B, new KeyMapData().setKey(DEFAULT_ID_B).setValue(DEFAULT_VAL_C).setRowNumber(2L));
         externalTestData.put(DEFAULT_ID_D, new KeyMapData().setKey(DEFAULT_ID_D).setValue(DEFAULT_VAL_E).setRowNumber(3L));
 
         keyMapComparator.setExternalData(externalTestData);
 
-        matchesTestData = new HashMap<KeyMapData, KeyMapData>();
+        matchesTestData = new HashMap<>();
         matchesTestData.put(new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L),
                             new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
     }
