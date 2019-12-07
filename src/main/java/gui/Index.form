@@ -101,7 +101,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="2"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Key Map Comparator"/>
+            <Property name="text" type="java.lang.String" value="Key Map Comparator "/>
           </Properties>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel2">

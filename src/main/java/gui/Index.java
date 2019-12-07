@@ -59,7 +59,7 @@ public class Index extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        jLabel1.setText("Key Map Comparator");
+        jLabel1.setText("Key Map Comparator ");
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Inputs"));
 
@@ -215,9 +215,7 @@ public class Index extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        System.out.println("Getting baseline data...");
-        
+                
         clearOutput();
         
         //
@@ -250,14 +248,17 @@ public class Index extends javax.swing.JFrame {
         //
         // Report
         //
+        writeOutput("SUMMARY");
+        writeOutput("Matches: " + api.getMatchesCount());
+        writeOutput("Differences: " + api.getDifferencesCount());
         writeOutput("");
-        writeOutput("Matches");
+        
+        writeOutput("REPORT");
+        writeOutput("Matches:");
         writeOutput(api.getReport(matches));
-        
-        writeOutput("Differences");
+        writeOutput("Differences:");
         writeOutput(api.getReport(differences));
-        
-        System.out.println("Complete!");
+        writeOutput("");
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -284,7 +285,7 @@ public class Index extends javax.swing.JFrame {
     
     private void logIfEmpty(Map<String, KeyMapData> map, String source) {
         if (map.isEmpty()) {
-            outputTxt.append("Empty Map from : '" + source + "'\n");
+            outputTxt.append("WARNING Empty Map from : '" + source + "'\n\n");
         }
     }
     
