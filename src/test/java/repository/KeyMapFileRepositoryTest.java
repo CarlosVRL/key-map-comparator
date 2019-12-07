@@ -22,8 +22,7 @@ public class KeyMapFileRepositoryTest
     private KeyMapComparator keyMapComparator;
 
     @BeforeMethod
-    public void init()
-    {
+    public void init() {
         keyMapComparator = new KeyMapComparator();
         keyMapFileRepository = new KeyMapFileRepository();
 
@@ -35,8 +34,7 @@ public class KeyMapFileRepositoryTest
     }
 
     @Test
-    public void canReadDataFromFile()
-    {
+    public void canReadDataFromFile() {
         Map<String, KeyMapData> data  = keyMapFileRepository.getKeyMapData(
                 baseline, KEY_FIELD, VALUE_FIELD
         );
@@ -45,8 +43,7 @@ public class KeyMapFileRepositoryTest
     }
 
     @Test
-    public void considersSameFileEqual()
-    {
+    public void considersSameFileEqual() {
         Map<String, KeyMapData> data1  = keyMapFileRepository.getKeyMapData(
                 baseline, KEY_FIELD, VALUE_FIELD
         );
@@ -62,8 +59,7 @@ public class KeyMapFileRepositoryTest
     }
 
     @Test
-    public void considersDifferentFilesNotEqual()
-    {
+    public void considersDifferentFilesNotEqual() {
         Map<String, KeyMapData> data1  = keyMapFileRepository.getKeyMapData(
                 baseline, KEY_FIELD, VALUE_FIELD
         );
