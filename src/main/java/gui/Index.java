@@ -2,10 +2,10 @@ package gui;
 
 import domain.KeyMapData;
 import java.io.File;
-import java.nio.file.Files;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import javax.xml.transform.OutputKeys;
+import org.apache.commons.io.FileUtils;
 import repository.KeyMapFileRepository;
 import service.KeyMapComparator;
 
@@ -259,6 +259,14 @@ public class Index extends javax.swing.JFrame {
         writeOutput("Differences:");
         writeOutput(api.getReport(differences));
         writeOutput("");
+        
+        // Export
+        byte[] matchesExport = KeyMapFileRepository.getBytesForCsv(matches);
+        try {
+            FileUtils.writeByteArrayToFile(new File("target\\test-out.csv"), matchesExport);
+        } catch (IOException ex) {
+            System.out.println(ex.toString());
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

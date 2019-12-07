@@ -2,17 +2,17 @@ package repository;
 
 import domain.KeyMapData;
 import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
+import service.KeyMapComparator;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * A KeyMapFileRepository.
  */
-public class KeyMapFileRepository
-{
+public class KeyMapFileRepository {
     /**
      * Read key map data from CSV.
      *
@@ -22,8 +22,7 @@ public class KeyMapFileRepository
      *
      * @return the keyMapData
      */
-    public static Map<String, KeyMapData> getKeyMapData(File file, String keyHeader, String valueHeader)
-    {
+    public static Map<String, KeyMapData> getKeyMapData(File file, String keyHeader, String valueHeader) {
         Map<String, KeyMapData> keyMapDataMap = new HashMap<>();
         try {
             Reader in = new FileReader(file);
@@ -55,5 +54,39 @@ public class KeyMapFileRepository
         }
 
         return keyMapDataMap;
+    }
+
+    public static byte[] getBytesForCsv(Map<KeyMapData, KeyMapData> data) {
+        ByteArrayOutputStream res = new ByteArrayOutputStream();
+        try (Writer w = new BufferedWriter(new OutputStreamWriter(res))) {
+            CSVPrinter p = new CSVPrinter(w, CSVFormat.DEFAULT);
+            p.printRecord(Arrays.asList(KeyMapComparator.REPORT_HEADER.split(",")));
+            Set<KeyMapData> keys = data.keySet();
+            keys.forEach(baseline -> {
+                KeyMapData external = data.get(baseline);
+                printRecordContents(p, baseline, external);
+
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return res.toByteArray();
+    }
+
+    private static void printRecordContents(
+            CSVPrinter p, KeyMapData baseline, KeyMapData external
+    ) {
+        try {
+            p.printRecord(Arrays.asList(
+                    baseline.getRowNumber(),
+                    baseline.getKey(),
+                    baseline.getValue(),
+                    external.getRowNumber(),
+                    external.getKey(),
+                    external.getValue()
+            ));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

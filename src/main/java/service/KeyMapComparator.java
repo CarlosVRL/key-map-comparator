@@ -16,8 +16,7 @@ public class KeyMapComparator
     private Long differencesCount;
 
     public static final String REPORT_HEADER =
-            "Baseline Row, Baseline Key, Baseline Value, " +
-            "External Row, External Key, External Value";
+            "Baseline Row,Baseline Key,Baseline Value,External Row,External Key,External Value";
 
     //
     // Factory
