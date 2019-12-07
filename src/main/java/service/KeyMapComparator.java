@@ -33,8 +33,7 @@ public class KeyMapComparator
     //
     // API
     //
-    public Map<KeyMapData, KeyMapData> findAllMatches()
-    {
+    public Map<KeyMapData, KeyMapData> findAllMatches() {
         matchesCount = 0L;
         Map<KeyMapData, KeyMapData> matches = new HashMap<>();
         Set<String> keys = baselineData.keySet();
@@ -54,8 +53,7 @@ public class KeyMapComparator
         return matches;
     }
 
-    public Map<KeyMapData, KeyMapData> findAllDifferences()
-    {
+    public Map<KeyMapData, KeyMapData> findAllDifferences() {
         differencesCount = 0L;
         Map<KeyMapData, KeyMapData> differences = new HashMap<>();
         Set<String> baselineKeys = baselineData.keySet();
