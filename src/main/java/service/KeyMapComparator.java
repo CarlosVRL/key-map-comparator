@@ -6,9 +6,18 @@ import java.util.*;
 
 public class KeyMapComparator
 {
+    //
+    // Members
+    //
     private Map<String, KeyMapData> baselineData;
     private Map<String, KeyMapData> externalData;
 
+    private Long matchesCount;
+    private Long differencesCount;
+
+    //
+    // API
+    //
     public static KeyMapComparator withBaselineAndExternalData(
             Map<String, KeyMapData> baselineData,
             Map<String, KeyMapData> externalData
@@ -16,6 +25,8 @@ public class KeyMapComparator
         KeyMapComparator res = new KeyMapComparator();
         res.setBaselineData(baselineData);
         res.setExternalData(externalData);
+        res.setMatchesCount(0L);
+        res.setDifferencesCount(0L);
         return res;
     }
 
@@ -41,7 +52,7 @@ public class KeyMapComparator
 
     public Map<KeyMapData, KeyMapData> findAllMatches()
     {
-        Map<KeyMapData, KeyMapData> matches = new HashMap<KeyMapData, KeyMapData>();
+        Map<KeyMapData, KeyMapData> matches = new HashMap<>();
         Set<String> keys = baselineData.keySet();
         for (String key : keys)
         {
@@ -51,8 +62,7 @@ public class KeyMapComparator
 
             if (baselineValue == null || externalValue == null) { continue; }
 
-            if (keyMapsMatch(baselineValue, externalValue))
-            {
+            if (keyMapsMatch(baselineValue, externalValue)) {
                 matches.put(baselineValue, externalValue);
             }
         }
@@ -151,5 +161,24 @@ public class KeyMapComparator
             System.out.println(data.getRowNumber() + separator + data.getKey() + separator + data.getValue());
         }
         System.out.println();
+    }
+
+    //
+    // Accessors
+    //
+    public Long getMatchesCount() {
+        return matchesCount;
+    }
+
+    public void setMatchesCount(Long matchesCount) {
+        this.matchesCount = matchesCount;
+    }
+
+    public Long getDifferencesCount() {
+        return differencesCount;
+    }
+
+    public void setDifferencesCount(Long differencesCount) {
+        this.differencesCount = differencesCount;
     }
 }

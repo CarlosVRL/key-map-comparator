@@ -12,7 +12,7 @@ import static org.testng.Assert.*;
 
 public class KeyMapComparatorTest
 {
-    private KeyMapComparator keyMapComparator;
+    private KeyMapComparator target;
     private Map<String, KeyMapData> baselineTestData;
     private Map<String, KeyMapData> externalTestData;
     private Map<KeyMapData, KeyMapData> matchesTestData;
@@ -29,57 +29,64 @@ public class KeyMapComparatorTest
 
     @BeforeMethod
     public void init() {
-        keyMapComparator = new KeyMapComparator();
+        target = new KeyMapComparator();
         simpleTestData();
     }
 
     @Test
     public void canInstantiateObject() {
-        assertNotNull(keyMapComparator);
+        assertNotNull(target);
     }
 
     @Test
     public void canReadBaselineDataFromMap() {
-        Map<String, KeyMapData> baselineData = keyMapComparator.getBaselineData();
+        Map<String, KeyMapData> baselineData = target.getBaselineData();
         assertEquals(baselineData, baselineTestData);
     }
 
     @Test
     public void canReadExternalDataFromMap() {
-        Map<String, KeyMapData> externalData = keyMapComparator.getExternalData();
+        Map<String, KeyMapData> externalData = target.getExternalData();
         assertEquals(externalData, externalTestData);
     }
 
     @Test
     public void canFindMatches() {
         int EXPECTED_MATCHES_SIZE = 1;
-        Map<KeyMapData, KeyMapData> matches = keyMapComparator.findAllMatches();
+        Map<KeyMapData, KeyMapData> matches = target.findAllMatches();
         Set<KeyMapData> keys = matches.keySet();
         for (KeyMapData key : keys) {
-            KeyMapComparator.keyMapsMatch(key, matches.get(key));
+            target.keyMapsMatch(key, matches.get(key));
         }
         assertEquals(keys.size(), EXPECTED_MATCHES_SIZE);
     }
 
     @Test
+    public void countMatches_shouldReturnZeroByDefault() {
+        Long EXPECTED_MATCHES_SIZE = 0L;
+        KeyMapComparator target = KeyMapComparator.withBaselineAndExternalData(null, null);
+        assertEquals(target.getMatchesCount(), EXPECTED_MATCHES_SIZE);
+    }
+
+    @Test
     public void canFindDifferences() {
         int EXPECTED_DIFFERENCES_SIZE = 3;
-        Map<KeyMapData, KeyMapData> differences = keyMapComparator.findAllDifferences();
+        Map<KeyMapData, KeyMapData> differences = target.findAllDifferences();
         Set<KeyMapData> keys = differences.keySet();
         assertEquals(keys.size(), EXPECTED_DIFFERENCES_SIZE);
     }
 
     @Test
     public void canPrintFormattedReport() {
-        keyMapComparator.printBaseline();
-        keyMapComparator.printExternal();
+        target.printBaseline();
+        target.printExternal();
 
-        Map<KeyMapData, KeyMapData> matches = keyMapComparator.findAllMatches();
-        String matchesReport = keyMapComparator.getReport(matches);
+        Map<KeyMapData, KeyMapData> matches = target.findAllMatches();
+        String matchesReport = target.getReport(matches);
         System.out.println(matchesReport);
 
-        Map<KeyMapData, KeyMapData> differences = keyMapComparator.findAllDifferences();
-        String differencesReport = keyMapComparator.getReport(differences);
+        Map<KeyMapData, KeyMapData> differences = target.findAllDifferences();
+        String differencesReport = target.getReport(differences);
         System.out.println(differencesReport);
     }
 
@@ -89,14 +96,14 @@ public class KeyMapComparatorTest
         baselineTestData.put(DEFAULT_ID_B, new KeyMapData().setKey(DEFAULT_ID_B).setValue(DEFAULT_VAL_B).setRowNumber(2L));
         baselineTestData.put(DEFAULT_ID_C, new KeyMapData().setKey(DEFAULT_ID_C).setValue(DEFAULT_VAL_C).setRowNumber(3L));
 
-        keyMapComparator.setBaselineData(baselineTestData);
+        target.setBaselineData(baselineTestData);
 
         externalTestData = new HashMap<>();
         externalTestData.put(DEFAULT_ID_A, new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
         externalTestData.put(DEFAULT_ID_B, new KeyMapData().setKey(DEFAULT_ID_B).setValue(DEFAULT_VAL_C).setRowNumber(2L));
         externalTestData.put(DEFAULT_ID_D, new KeyMapData().setKey(DEFAULT_ID_D).setValue(DEFAULT_VAL_E).setRowNumber(3L));
 
-        keyMapComparator.setExternalData(externalTestData);
+        target.setExternalData(externalTestData);
 
         matchesTestData = new HashMap<>();
         matchesTestData.put(new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L),
