@@ -22,19 +22,21 @@ public class KeyMapFileRepository {
      *
      * @return the keyMapData
      */
-    public static Map<String, KeyMapData> getKeyMapData(File file, String keyHeader, String valueHeader) {
+    public static Map<String, KeyMapData> getKeyMapData(
+            File file, String keyHeader, String valueHeader
+    ) {
         Map<String, KeyMapData> keyMapDataMap = new HashMap<>();
         try {
             Reader in = new FileReader(file);
             Iterable<CSVRecord> records =
-                    CSVFormat.RFC4180.withHeader(
-                            keyHeader,
-                            valueHeader
-                    ).withFirstRecordAsHeader().parse(in);
+                    CSVFormat
+                            .RFC4180
+                            .withHeader(keyHeader, valueHeader)
+                            .withFirstRecordAsHeader()
+                            .parse(in);
 
             Long recordCount = 0L;
-            for (CSVRecord record : records)
-            {
+            for (CSVRecord record : records) {
                 recordCount++;
                 String key = record.get(keyHeader);
                 String value = record.get(valueHeader);
@@ -46,9 +48,6 @@ public class KeyMapFileRepository {
 
                 keyMapDataMap.put(key, keyMapData);
             }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
