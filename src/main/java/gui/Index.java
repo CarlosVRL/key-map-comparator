@@ -276,7 +276,7 @@ public class Index extends javax.swing.JFrame {
     private Map<String, KeyMapData> getMapFromSpecification(
             String filename, String key, String value
     ) {
-        Map<String, KeyMapData> res = new HashMap<String, KeyMapData>();
+        Map<String, KeyMapData> res = new HashMap<>();
         try {
             res = KeyMapFileRepository.getKeyMapData(
                     (new File(filename)), key, value
