@@ -277,9 +277,13 @@ public class Index extends javax.swing.JFrame {
             String filename, String key, String value
     ) {
         Map<String, KeyMapData> res = new HashMap<String, KeyMapData>();
-        res = KeyMapFileRepository.getKeyMapData(
-                (new File(filename)), key, value
-        );
+        try {
+            res = KeyMapFileRepository.getKeyMapData(
+                    (new File(filename)), key, value
+            );
+        } catch (Exception e) {
+            System.out.println("Difficulty getting map data : '" + filename + "' with key/value : '" + key + "' '" + value + "'");
+        }
         return res;
     }
     
