@@ -61,12 +61,9 @@ public class KeyMapFileRepository {
         try (Writer w = new BufferedWriter(new OutputStreamWriter(res))) {
             CSVPrinter p = new CSVPrinter(w, CSVFormat.DEFAULT);
             p.printRecord(Arrays.asList(KeyMapComparator.REPORT_HEADER.split(",")));
-            Set<KeyMapData> keys = data.keySet();
-            keys.forEach(baseline -> {
-                KeyMapData external = data.get(baseline);
-                printRecordContents(p, baseline, external);
-
-            });
+            data.forEach((baseline, external) ->
+                    printRecordContents(p, baseline, external)
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
