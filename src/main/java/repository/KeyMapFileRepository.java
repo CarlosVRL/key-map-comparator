@@ -22,7 +22,7 @@ public class KeyMapFileRepository
      *
      * @return the keyMapData
      */
-    public Map<String, KeyMapData> getKeyMapData(File file, String keyHeader, String valueHeader)
+    public static Map<String, KeyMapData> getKeyMapData(File file, String keyHeader, String valueHeader)
     {
         Map<String, KeyMapData> keyMapDataMap = new HashMap<>();
         try {
