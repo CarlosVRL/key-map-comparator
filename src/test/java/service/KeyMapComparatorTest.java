@@ -28,35 +28,30 @@ public class KeyMapComparatorTest
     private static final String DEFAULT_VAL_E = "VAL_E";
 
     @BeforeMethod
-    public void initTest()
-    {
+    public void init() {
         keyMapComparator = new KeyMapComparator();
         initTestData();
     }
 
     @Test
-    public void canInstantiateObject()
-    {
+    public void canInstantiateObject() {
         assertNotNull(keyMapComparator);
     }
 
     @Test
-    public void canReadBaselineDataFromMap()
-    {
+    public void canReadBaselineDataFromMap() {
         Map<String, KeyMapData> baselineData = keyMapComparator.getBaselineData();
         assertEquals(baselineData, baselineTestData);
     }
 
     @Test
-    public void canReadExternalDataFromMap()
-    {
+    public void canReadExternalDataFromMap() {
         Map<String, KeyMapData> externalData = keyMapComparator.getExternalData();
         assertEquals(externalData, externalTestData);
     }
 
     @Test
-    public void canFindMatches()
-    {
+    public void canFindMatches() {
         int EXPECTED_MATCHES_SIZE = 1;
         Map<KeyMapData, KeyMapData> matches = keyMapComparator.findAllMatches();
         Set<KeyMapData> keys = matches.keySet();
@@ -68,8 +63,7 @@ public class KeyMapComparatorTest
     }
 
     @Test
-    public void canFindDifferences()
-    {
+    public void canFindDifferences() {
         int EXPECTED_DIFFERENCES_SIZE = 3;
         Map<KeyMapData, KeyMapData> differences = keyMapComparator.findAllDifferences();
         Set<KeyMapData> keys = differences.keySet();
@@ -77,8 +71,7 @@ public class KeyMapComparatorTest
     }
 
     @Test
-    public void canPrintFormattedReport()
-    {
+    public void canPrintFormattedReport() {
         keyMapComparator.printBaseline();
         keyMapComparator.printExternal();
 
@@ -91,8 +84,7 @@ public class KeyMapComparatorTest
         System.out.println(differencesReport);
     }
 
-    private void initTestData()
-    {
+    private void initTestData() {
         baselineTestData = new HashMap<String, KeyMapData>();
         baselineTestData.put(DEFAULT_ID_A, new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
         baselineTestData.put(DEFAULT_ID_B, new KeyMapData().setKey(DEFAULT_ID_B).setValue(DEFAULT_VAL_B).setRowNumber(2L));
