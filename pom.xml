@@ -6,7 +6,7 @@
 
     <groupId>com.codinginfire</groupId>
     <artifactId>key-map-comparator</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
