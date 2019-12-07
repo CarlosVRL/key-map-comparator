@@ -30,9 +30,11 @@ public class KeyMapComparatorTest
     @BeforeMethod
     public void init() {
         target = new KeyMapComparator();
-        simpleTestData();
     }
 
+    //
+    // Test Cases
+    //
     @Test
     public void canInstantiateObject() {
         assertNotNull(target);
@@ -40,12 +42,14 @@ public class KeyMapComparatorTest
 
     @Test
     public void canReadBaselineDataFromMap() {
+        simpleTestData();
         Map<String, KeyMapData> baselineData = target.getBaselineData();
         assertEquals(baselineData, baselineTestData);
     }
 
     @Test
     public void canReadExternalDataFromMap() {
+        simpleTestData();
         Map<String, KeyMapData> externalData = target.getExternalData();
         assertEquals(externalData, externalTestData);
     }
@@ -53,6 +57,7 @@ public class KeyMapComparatorTest
     @Test
     public void canFindMatches() {
         int EXPECTED_MATCHES_SIZE = 1;
+        simpleTestData();
         Map<KeyMapData, KeyMapData> matches = target.findAllMatches();
         Set<KeyMapData> keys = matches.keySet();
         for (KeyMapData key : keys) {
@@ -64,13 +69,14 @@ public class KeyMapComparatorTest
     @Test
     public void countMatches_shouldReturnZeroByDefault() {
         Long EXPECTED_MATCHES_SIZE = 0L;
-        KeyMapComparator target = KeyMapComparator.withBaselineAndExternalData(null, null);
+        target = KeyMapComparator.withBaselineAndExternalData(null, null);
         assertEquals(target.getMatchesCount(), EXPECTED_MATCHES_SIZE);
     }
 
     @Test
     public void canFindDifferences() {
         int EXPECTED_DIFFERENCES_SIZE = 3;
+        simpleTestData();
         Map<KeyMapData, KeyMapData> differences = target.findAllDifferences();
         Set<KeyMapData> keys = differences.keySet();
         assertEquals(keys.size(), EXPECTED_DIFFERENCES_SIZE);
@@ -78,6 +84,8 @@ public class KeyMapComparatorTest
 
     @Test
     public void canPrintFormattedReport() {
+        simpleTestData();
+
         target.printBaseline();
         target.printExternal();
 
@@ -90,6 +98,9 @@ public class KeyMapComparatorTest
         System.out.println(differencesReport);
     }
 
+    //
+    // Implementation
+    //
     private void simpleTestData() {
         baselineTestData = new HashMap<>();
         baselineTestData.put(DEFAULT_ID_A, new KeyMapData().setKey(DEFAULT_ID_A).setValue(DEFAULT_VAL_A).setRowNumber(1L));
