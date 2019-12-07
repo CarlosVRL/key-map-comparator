@@ -15,6 +15,10 @@ public class KeyMapComparator
     private Long matchesCount;
     private Long differencesCount;
 
+    public static final String REPORT_HEADER =
+            "Baseline Row, Baseline Key, Baseline Value, " +
+            "External Row, External Key, External Value";
+
     //
     // Factory
     //
@@ -104,7 +108,7 @@ public class KeyMapComparator
         List<KeyMapData> sortedKeys = new ArrayList<>(keys);
         sortedKeys.sort(Comparator.comparing(KeyMapData::getRowNumber));
 
-        report += "Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value\n";
+        report += REPORT_HEADER + "\n";
         for (KeyMapData baseline : sortedKeys)
         {
             KeyMapData external = matches.get(baseline);
