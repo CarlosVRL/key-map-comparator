@@ -74,3 +74,5 @@ Data mis-matches include scenarios where baseline/external source isn't present.
 to prefer primary data in the case of redundancy
 
 Reporting to generate simple outputs of the matches/differences
+
+Difference matching to include options for inner/outer (inclusive) baseline difference
