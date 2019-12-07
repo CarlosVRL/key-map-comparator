@@ -1,45 +1,51 @@
 = Key Map Comparator
 
-== Synopsis
+== Overview
 
-KMC summarizes the differences between two key maps.
+The motivation behind this API is similar to wanting to compare "prices" from different vendors.
+For example, if Tom sells Apples for 2.50, Bob for 1.75, etc., which is the best deal? Do any match?
+
+KMC summarizes the differences between two key maps, and is intended to be generic.
+
 Row numbers are included to help with cross-references.
+
+== Usage
 
 Given a set of baseline data:
 
-  Baseline Row, Baseline Key, Baseline Value
-  1           , ID_A        , VAL_A
-  2           , ID_B        , VAL_B
-  3           , ID_C        , VAL_C
+....
+Baseline Row, Baseline Key, Baseline Value
+1           , ID_A        , VAL_A
+2           , ID_B        , VAL_B
+3           , ID_C        , VAL_C
+....
 
 and a set external (comparison) data:
 
-  External Row, External Key, External Value
-  1           , ID_A        , VAL_A
-  2           , ID_B        , VAL_C
-  3           , ID_D        , VAL_E
+....
+External Row, External Key, External Value
+1           , ID_A        , VAL_A
+2           , ID_B        , VAL_C
+3           , ID_D        , VAL_E
+....
 
 Baseline key-value data matching external key-value data can be logged by rows:
 
-```
-keyMapComparator.findAllMatches();
-```
-
-  Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value
-  1           , ID_A        , VAL_A         , 1           , ID_A        , VAL_A
+....
+Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value
+1           , ID_A        , VAL_A         , 1           , ID_A        , VAL_A
+....
 
 As can all of the key-value data mis-matches:
 
-```
-keyMapComparator.findAllDifferences();
-```
+....
+Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value
+2           , ID_B        , VAL_B         , 2           , ID_B        , VAL_C
+3           , ID_C        , VAL_C         , 0           , -           , -
+0           , -           , -             , 3           , ID_D        , VAL_E
+....
 
-  Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value
-  2           , ID_B        , VAL_B         , 2           , ID_B        , VAL_C
-  3           , ID_C        , VAL_C         , 0           , -           , -
-  0           , -           , -             , 3           , ID_D        , VAL_E
-
-=== Notes
+== Notes
 
 The Baseline and External data are assumed to have unique Keys.
 
