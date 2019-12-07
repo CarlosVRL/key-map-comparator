@@ -7,6 +7,12 @@ import java.util.*;
 public class KeyMapComparator
 {
     //
+    // Constants
+    //
+    public static final String REPORT_HEADER =
+            "Baseline Row,Baseline Key,Baseline Value,External Row,External Key,External Value";
+
+    //
     // Members
     //
     private Map<String, KeyMapData> baselineData;
@@ -14,9 +20,6 @@ public class KeyMapComparator
 
     private Long matchesCount;
     private Long differencesCount;
-
-    public static final String REPORT_HEADER =
-            "Baseline Row,Baseline Key,Baseline Value,External Row,External Key,External Value";
 
     //
     // Factory
@@ -146,6 +149,15 @@ public class KeyMapComparator
     }
 
     //
+    // Implementation
+    //
+    private KeyMapData emptyKeyMapData() {
+        Long NO_ROW = 0L;
+        String DASH = "-";
+        return new KeyMapData().setKey(DASH).setValue(DASH).setRowNumber(NO_ROW);
+    }
+
+    //
     // Accessors
     //
     public Long getMatchesCount() {
@@ -182,14 +194,5 @@ public class KeyMapComparator
     public Map<String, KeyMapData> getExternalData()
     {
         return this.externalData;
-    }
-
-    //
-    // Implementation
-    //
-    private KeyMapData emptyKeyMapData() {
-        Long NO_ROW = 0L;
-        String DASH = "-";
-        return new KeyMapData().setKey(DASH).setValue(DASH).setRowNumber(NO_ROW);
     }
 }
