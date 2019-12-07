@@ -10,8 +10,7 @@ import java.util.Set;
 
 import static org.testng.Assert.*;
 
-public class KeyMapComparatorTest
-{
+public class KeyMapComparatorTest {
     private KeyMapComparator target;
     private Map<String, KeyMapData> baselineTestData;
     private Map<String, KeyMapData> externalTestData;
@@ -67,10 +66,28 @@ public class KeyMapComparatorTest
     }
 
     @Test
-    public void countMatches_shouldReturnZeroByDefault() {
+    public void countMatches_shouldReturnMatchesZero_withEmptyData() {
         Long EXPECTED_MATCHES_SIZE = 0L;
         target = KeyMapComparator.withBaselineAndExternalData(null, null);
         assertEquals(target.getMatchesCount(), EXPECTED_MATCHES_SIZE);
+    }
+
+    @Test
+    public void countMatches_shouldReturnExpected_withSimpleData() {
+        Long EXPECTED_MATCHES_SIZE = 1L;
+        simpleTestData();
+        target = KeyMapComparator.withBaselineAndExternalData(baselineTestData, externalTestData);
+        target.findAllMatches();
+        assertEquals(target.getMatchesCount(), EXPECTED_MATCHES_SIZE);
+    }
+
+    @Test
+    public void countDifferences_shouldReturnExpected_withSimpleData() {
+        Long EXPECTED_COUNT = 3L;
+        simpleTestData();
+        target = KeyMapComparator.withBaselineAndExternalData(baselineTestData, externalTestData);
+        target.findAllDifferences();
+        assertEquals(target.getDifferencesCount(), EXPECTED_COUNT);
     }
 
     @Test

@@ -55,6 +55,7 @@ public class KeyMapComparator
 
     public Map<KeyMapData, KeyMapData> findAllMatches()
     {
+        matchesCount = 0L;
         Map<KeyMapData, KeyMapData> matches = new HashMap<>();
         Set<String> keys = baselineData.keySet();
         for (String key : keys)
@@ -66,6 +67,7 @@ public class KeyMapComparator
             if (baselineValue == null || externalValue == null) { continue; }
 
             if (keyMapsMatch(baselineValue, externalValue)) {
+                matchesCount++;
                 matches.put(baselineValue, externalValue);
             }
         }
@@ -74,36 +76,36 @@ public class KeyMapComparator
 
     public Map<KeyMapData, KeyMapData> findAllDifferences()
     {
-        Map<KeyMapData, KeyMapData> differences = new HashMap<KeyMapData, KeyMapData>();
+        differencesCount = 0L;
+        Map<KeyMapData, KeyMapData> differences = new HashMap<>();
         Set<String> baselineKeys = baselineData.keySet();
 
         // Baseline to External Differences
-        for (String key : baselineKeys)
-        {
+        for (String key : baselineKeys) {
             KeyMapData baselineValue = baselineData.get(key);
             KeyMapData externalValue = externalData.get(key);
 
             // Baseline with no External match
-            if (!externalData.containsKey(key))
-            {
-                differences.put(baselineValue, new KeyMapData().setKey("-").setValue("-").setRowNumber(0L));
+            if (!externalData.containsKey(key)) {
+                differencesCount++;
+                differences.put(baselineValue, emptyKeyMapData());
                 continue;
             }
 
-            // Baseline does not match External
+            // Compare Baseline to External
             if (keyMapsMatch(baselineValue, externalValue)) { continue; }
 
+            differencesCount++;
             differences.put(baselineValue, externalValue);
         }
 
         // External with no Baseline Matches
         Set<String> externalKeys = externalData.keySet();
-        for (String key : externalKeys)
-        {
+        for (String key : externalKeys) {
             KeyMapData externalValue = externalData.get(key);
-            if (!baselineData.containsKey(key))
-            {
-                differences.put(new KeyMapData().setKey("-").setValue("-").setRowNumber(0L), externalValue);
+            if (!baselineData.containsKey(key)) {
+                differencesCount++;
+                differences.put(emptyKeyMapData(), externalValue);
             }
         }
 
@@ -183,5 +185,14 @@ public class KeyMapComparator
 
     public void setDifferencesCount(Long differencesCount) {
         this.differencesCount = differencesCount;
+    }
+
+    //
+    // Implementation
+    //
+    private KeyMapData emptyKeyMapData() {
+        Long NO_ROW = 0L;
+        String DASH = "-";
+        return new KeyMapData().setKey(DASH).setValue(DASH).setRowNumber(NO_ROW);
     }
 }
