@@ -16,7 +16,7 @@ public class KeyMapComparator
     private Long differencesCount;
 
     //
-    // API
+    // Factory
     //
     public static KeyMapComparator withBaselineAndExternalData(
             Map<String, KeyMapData> baselineData,
@@ -30,6 +30,9 @@ public class KeyMapComparator
         return res;
     }
 
+    //
+    // API
+    //
     public void setBaselineData(Map<String, KeyMapData> baselineData)
     {
         this.baselineData = baselineData;
