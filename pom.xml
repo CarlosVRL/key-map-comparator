@@ -7,19 +7,20 @@
     <groupId>com.codinginfire</groupId>
     <artifactId>key-map-comparator</artifactId>
     <version>1.0.1-SNAPSHOT</version>
+
     <dependencies>
+        <!-- main-dependencies -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.6</version>
+        </dependency>
+        <!-- test-dependencies -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.8.8</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-csv</artifactId>
-            <version>1.6</version>
-        </dependency>
     </dependencies>
-
-
 </project>
