@@ -33,26 +33,6 @@ public class KeyMapComparator
     //
     // API
     //
-    public void setBaselineData(Map<String, KeyMapData> baselineData)
-    {
-        this.baselineData = baselineData;
-    }
-
-    public Map<String, KeyMapData> getBaselineData()
-    {
-        return this.baselineData;
-    }
-
-    public void setExternalData(Map<String, KeyMapData> externalData)
-    {
-        this.externalData = externalData;
-    }
-
-    public Map<String, KeyMapData> getExternalData()
-    {
-        return this.externalData;
-    }
-
     public Map<KeyMapData, KeyMapData> findAllMatches()
     {
         matchesCount = 0L;
@@ -112,15 +92,13 @@ public class KeyMapComparator
         return differences;
     }
 
-    public static boolean keyMapsMatch(KeyMapData a, KeyMapData b)
-    {
+    public static boolean keyMapsMatch(KeyMapData a, KeyMapData b) {
         if (!a.getKey().equals(b.getKey())) { return false; }
         if (!a.getValue().equals(b.getValue())) { return false; }
         return true;
     }
 
-    public String getReport(Map<KeyMapData, KeyMapData> matches)
-    {
+    public String getReport(Map<KeyMapData, KeyMapData> matches) {
         String report = "";
         String separator = ", ";
 
@@ -138,8 +116,7 @@ public class KeyMapComparator
         return report;
     }
 
-    public void printBaseline()
-    {
+    public void printBaseline() {
         String report = "";
         String separator = ", ";
         Set<String> keys = baselineData.keySet();
@@ -153,8 +130,7 @@ public class KeyMapComparator
         System.out.println();
     }
 
-    public void printExternal()
-    {
+    public void printExternal() {
         String report = "";
         String separator = ", ";
         Set<String> keys = externalData.keySet();
@@ -185,6 +161,26 @@ public class KeyMapComparator
 
     public void setDifferencesCount(Long differencesCount) {
         this.differencesCount = differencesCount;
+    }
+
+    public void setBaselineData(Map<String, KeyMapData> baselineData)
+    {
+        this.baselineData = baselineData;
+    }
+
+    public Map<String, KeyMapData> getBaselineData()
+    {
+        return this.baselineData;
+    }
+
+    public void setExternalData(Map<String, KeyMapData> externalData)
+    {
+        this.externalData = externalData;
+    }
+
+    public Map<String, KeyMapData> getExternalData()
+    {
+        return this.externalData;
     }
 
     //
