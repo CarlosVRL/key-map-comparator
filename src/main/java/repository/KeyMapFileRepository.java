@@ -24,7 +24,7 @@ public class KeyMapFileRepository
      */
     public Map<String, KeyMapData> getKeyMapData(File file, String keyHeader, String valueHeader)
     {
-        Map<String, KeyMapData> keyMapDataMap = new HashMap<String, KeyMapData>();;
+        Map<String, KeyMapData> keyMapDataMap = new HashMap<>();
         try {
             Reader in = new FileReader(file);
             Iterable<CSVRecord> records =
