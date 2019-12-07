@@ -62,6 +62,8 @@ Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External
 
 == Notes
 
+See `Makefile` for several useful development commands.
+
 The Baseline and External data are assumed to have unique Keys.
 
 Data mis-matches include scenarios where baseline/external source isn't present.
