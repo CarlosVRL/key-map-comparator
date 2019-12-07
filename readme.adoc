@@ -18,6 +18,12 @@ Run the main method for a simple interface:
 gui.Index.java
 ....
 
+There are several example files for testing in
+
+....
+src/test/resources
+....
+
 == API Usage
 
 Given a set of baseline data:
