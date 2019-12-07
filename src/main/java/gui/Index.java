@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.xml.transform.OutputKeys;
 import repository.KeyMapFileRepository;
+import service.KeyMapComparator;
 
 /**
  *
@@ -168,16 +169,16 @@ public class Index extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 134, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(141, 141, 141)))))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(32, 32, 32))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,6 +240,23 @@ public class Index extends javax.swing.JFrame {
         );
         logIfEmpty(external, externalFileTxt.getText());
         
+        //
+        // Comparison
+        //
+        KeyMapComparator api = KeyMapComparator.withBaselineAndExternalData(baseline, external);
+        Map<KeyMapData, KeyMapData> matches = api.findAllMatches();
+        Map<KeyMapData, KeyMapData> differences = api.findAllDifferences();
+        
+        //
+        // Report
+        //
+        writeOutput("");
+        writeOutput("Matches");
+        writeOutput(api.getReport(matches));
+        
+        writeOutput("Differences");
+        writeOutput(api.getReport(differences));
+        
         System.out.println("Complete!");
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -248,6 +266,10 @@ public class Index extends javax.swing.JFrame {
     //
     private void clearOutput() {
         outputTxt.setText("");
+    }
+    
+    private void writeOutput(String msg) {
+        outputTxt.append(msg + "\n");
     }
     
     private Map<String, KeyMapData> getMapFromSpecification(
