@@ -2,14 +2,22 @@ package service;
 
 import domain.KeyMapData;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class KeyMapComparator
 {
     private Map<String, KeyMapData> baselineData;
     private Map<String, KeyMapData> externalData;
+
+    public static KeyMapComparator withBaselineAndExternalData(
+            Map<String, KeyMapData> baselineData,
+            Map<String, KeyMapData> externalData
+    ) {
+        KeyMapComparator res = new KeyMapComparator();
+        res.setBaselineData(baselineData);
+        res.setExternalData(externalData);
+        return res;
+    }
 
     public void setBaselineData(Map<String, KeyMapData> baselineData)
     {
@@ -100,9 +108,13 @@ public class KeyMapComparator
     {
         String report = "";
         String separator = ", ";
+
         Set<KeyMapData> keys = matches.keySet();
+        List<KeyMapData> sortedKeys = new ArrayList<>(keys);
+        sortedKeys.sort(Comparator.comparing(KeyMapData::getRowNumber));
+
         report += "Baseline Row, Baseline Key, Baseline Value, External Row, External Key, External Value\n";
-        for (KeyMapData baseline : keys)
+        for (KeyMapData baseline : sortedKeys)
         {
             KeyMapData external = matches.get(baseline);
             report += baseline.getRowNumber() + separator + baseline.getKey() + separator + baseline.getValue() + separator +
