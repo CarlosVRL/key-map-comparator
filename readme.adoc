@@ -6,6 +6,10 @@ The motivation behind this API is similar to wanting to compare "prices" from di
 For example, if Tom sells Apples for 2.50 and Bananas for 3.00, but Bob sells Apples for 1.75 and Bananas for 3.25, etc., which is the best deal?
 Are there any matches?
 
+.GUI Demo
+[caption=""]
+image::images/usage.png[GUI]
+
 KMC summarizes the differences between two key maps, and is intended to be generic.
 
 Row numbers are included to help with cross-references.
