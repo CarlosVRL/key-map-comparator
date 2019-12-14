@@ -21,6 +21,9 @@ import service.KeyMapComparator;
  */
 public class Index extends javax.swing.JFrame {
 
+    private Map<KeyMapData, KeyMapData> matches;
+    private Map<KeyMapData, KeyMapData> differences;
+
     /**
      * Creates new form Index
      */
@@ -56,9 +59,11 @@ public class Index extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        compareBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         outputTxt = new javax.swing.JTextArea();
+        matchesBtn = new javax.swing.JButton();
+        differencesBtn = new javax.swing.JButton();
 
         jLabel4.setText("jLabel4");
 
@@ -184,10 +189,10 @@ public class Index extends javax.swing.JFrame {
                     .addComponent(jLabel8)))
         );
 
-        jButton1.setText("Compare");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        compareBtn.setText("Compare");
+        compareBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                compareBtnActionPerformed(evt);
             }
         });
 
@@ -195,23 +200,40 @@ public class Index extends javax.swing.JFrame {
         outputTxt.setRows(5);
         jScrollPane1.setViewportView(outputTxt);
 
+        matchesBtn.setText("Matches");
+        matchesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                matchesBtnActionPerformed(evt);
+            }
+        });
+
+        differencesBtn.setText("Differences");
+        differencesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                differencesBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(32, 32, 32))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(compareBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(matchesBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(differencesBtn)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(32, 32, 32))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +243,10 @@ public class Index extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(compareBtn)
+                    .addComponent(matchesBtn)
+                    .addComponent(differencesBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                 .addContainerGap())
@@ -247,7 +272,7 @@ public class Index extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void compareBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compareBtnActionPerformed
                 
         clearOutput();
         
@@ -275,8 +300,8 @@ public class Index extends javax.swing.JFrame {
         // Comparison
         //
         KeyMapComparator api = KeyMapComparator.withBaselineAndExternalData(baseline, external);
-        Map<KeyMapData, KeyMapData> matches = api.findAllMatches();
-        Map<KeyMapData, KeyMapData> differences = api.findAllDifferences();
+        matches = api.findAllMatches();
+        differences = api.findAllDifferences();
         
         //
         // Report
@@ -285,24 +310,8 @@ public class Index extends javax.swing.JFrame {
         writeOutput("Matches: " + api.getMatchesCount());
         writeOutput("Differences: " + api.getDifferencesCount());
         writeOutput("");
-        
-        writeOutput("REPORT");
-        writeOutput("Matches:");
-        writeOutput(api.getReport(matches));
-        writeOutput("Differences:");
-        writeOutput(api.getReport(differences));
-        writeOutput("");
-        
-        // Export
-        byte[] matchesExport = KeyMapFileRepository.getBytesForCsv(matches);
-        try {
-            // TODO: extract output destination to user input
-            FileUtils.writeByteArrayToFile(new File("target\\test-out.csv"), matchesExport);
-        } catch (IOException ex) {
-            System.out.println(ex.toString());
-        }
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+ 
+    }//GEN-LAST:event_compareBtnActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         selectFile(baselineFileTxt);
@@ -311,6 +320,36 @@ public class Index extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         selectFile(externalFileTxt);        
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void matchesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_matchesBtnActionPerformed
+        if (matches == null) {
+            writeOutput("Please compare to export matches");
+            return;
+        }
+        byte[] export = KeyMapFileRepository.getBytesForCsv(matches);
+        try {
+            String name = "key-map-comparator-matches-out.csv";
+            FileUtils.writeByteArrayToFile(new File(name), export);
+            writeOutput("> " + name);
+        } catch (IOException ex) {
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_matchesBtnActionPerformed
+
+    private void differencesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_differencesBtnActionPerformed
+        if (differences == null) {
+            writeOutput("Please compare to export differences");
+            return;
+        }
+        byte[] export = KeyMapFileRepository.getBytesForCsv(differences);
+        try {
+            String name = "key-map-comparator-differences-out.csv";
+            FileUtils.writeByteArrayToFile(new File(name), export);
+            writeOutput("> " + name);
+        } catch (IOException ex) {
+            System.out.println(ex.toString());
+        }
+    }//GEN-LAST:event_differencesBtnActionPerformed
 
     private void selectFile(JTextField fieldToUpdate) throws HeadlessException {
         JFileChooser fc = new JFileChooser();
@@ -370,10 +409,11 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JTextField baselineFileTxt;
     private javax.swing.JTextField baselineKeyTxt;
     private javax.swing.JTextField baselineValueTxt;
+    private javax.swing.JButton compareBtn;
+    private javax.swing.JButton differencesBtn;
     private javax.swing.JTextField externalFileTxt;
     private javax.swing.JTextField externalKeyTxt;
     private javax.swing.JTextField externalValueTxt;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
@@ -388,6 +428,7 @@ public class Index extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JButton matchesBtn;
     private javax.swing.JTextArea outputTxt;
     // End of variables declaration//GEN-END:variables
 }
