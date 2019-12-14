@@ -1,8 +1,8 @@
 # 1.0.1
 
-**core:** ...
+**gui:** add form to select matches/differences data
 
-**gui:** add form to generate matches/differences from input
+**gui:** add options to export matches/differences
 
 # 1.0.0
 
