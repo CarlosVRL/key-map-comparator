@@ -1,11 +1,13 @@
 package gui;
 
 import domain.KeyMapData;
+import java.awt.HeadlessException;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JFileChooser;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileFilter;
 
 import org.apache.commons.io.FileUtils;
@@ -303,32 +305,24 @@ public class Index extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        JFileChooser fc = new JFileChooser();
-        fc.addChoosableFileFilter(new CsvFileFilter());
-        fc.setAcceptAllFileFilterUsed(false);
-        int returnVal = fc.showOpenDialog(this);
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-            baselineFileTxt.setText(fc.getSelectedFile().getAbsolutePath());
-        } else {
-            baselineFileTxt.setText("");
-        }
-        
+        selectFile(baselineFileTxt);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
+        selectFile(externalFileTxt);        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void selectFile(JTextField fieldToUpdate) throws HeadlessException {
         JFileChooser fc = new JFileChooser();
         fc.addChoosableFileFilter(new CsvFileFilter());
         fc.setAcceptAllFileFilterUsed(false);
         int returnVal = fc.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-            externalFileTxt.setText(fc.getSelectedFile().getAbsolutePath());
+            fieldToUpdate.setText(fc.getSelectedFile().getAbsolutePath());
         } else {
-            externalFileTxt.setText("");
+            fieldToUpdate.setText("");
         }
-        
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }
 
     //
     // Implementation
