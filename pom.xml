@@ -6,7 +6,7 @@
 
     <groupId>com.codinginfire</groupId>
     <artifactId>key-map-comparator</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
