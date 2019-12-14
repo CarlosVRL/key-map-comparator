@@ -8,7 +8,7 @@ Are there any matches?
 
 .GUI Demo
 [caption=""]
-image::images/usage.png[GUI]
+image::images/usage.png[GUI,align="center"]
 
 KMC summarizes the differences between two key maps, and is intended to be generic.
 
